@@ -16,7 +16,7 @@ while (input !== "quit" && input !== "q") {
     todos.push(newTodo);
     console.log(`${newTodo} added to list`);
   } else if (input === "delete") {
-    const indexStr = parseInt(
+    const index = parseInt(
       prompt("What is the index of the list item you want to delete?")
     );
     if (!Number.isNaN(index)) {
