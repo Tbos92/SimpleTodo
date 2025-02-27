@@ -25,6 +25,27 @@ while (input !== "quit" && input !== "q") {
     } else {
       console.log("Unknown index");
     }
+  } else if (input === "clear") {
+    console.log("clear selected");
+
+    const confirmation = prompt(
+      "Are you sure? This will erase the entire list. Y/N"
+    );
+
+    console.log(confirmation);
+
+    if (
+      confirmation.toLocaleLowerCase() === "n" ||
+      confirmation.toLocaleLowerCase() === "no"
+    ) {
+      console.log("Clear command cancelled");
+    } else if (
+      confirmation.toLocaleLowerCase() === "y" ||
+      confirmation.toLocaleLowerCase() === "yes"
+    ) {
+      todos.splice(0, todos.length);
+      console.log("List cleared");
+    }
   }
   input = prompt(
     "What would you like to do? See webpage for a list of commands"
